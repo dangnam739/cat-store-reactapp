@@ -100,20 +100,20 @@ export const storeProducts = [
 
 export const detailProduct_Item = {
   id: 1,
-    type: "Mèo Aegean Hi Lạp",
-    img: "img/cat-1.png",
-    price: 10,
-    origin: "Greek",
-    info:
-      "Mèo Aegean có xu hướng thông minh và hoạt bát, với kỹ năng giao tiếp tốt. Chúng thường thân thiện với mọi người và có thể là những con mèo tuyệt vời cho các gia đình có trẻ em.",
-    inCart: false,
-    count: 0,
-    total: 0
+  type: "Mèo Aegean Hi Lạp",
+  img: "img/cat-1.png",
+  price: 10,
+  origin: "Greek",
+  info:
+    "Mèo Aegean có xu hướng thông minh và hoạt bát, với kỹ năng giao tiếp tốt. Chúng thường thân thiện với mọi người và có thể là những con mèo tuyệt vời cho các gia đình có trẻ em.",
+  inCart: false,
+  count: 0,
+  total: 0
 };
 export const InfoOfShop = {
-  name:"Cat Boutique",
-  img:'img/shop-img.png',
-  address:"D9, Hanoi university of Science and Technology",
-  phone:" 012 345 6789",
-  time:'Mở cửa:7h - 20h',
+  name: "Cat Boutique",
+  img: 'img/shop-img.png',
+  address: "D9, Hanoi university of Science and Technology",
+  phone: " 012 345 6789",
+  time: 'Mở cửa:7h - 20h',
 }
