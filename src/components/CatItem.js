@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 import { CatConsumer } from "../context";
 import PropTypes from 'prop-types';
 
-export default function Cat({ product }) {
+export default function CatItem({ product }) {
     const { id, title, img, price, inCart } = product;
     return (
         <CatWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
             <div className="card">
                 <CatConsumer>
-
                     {value => {
                         return (
                             <div className="img-container my-5"

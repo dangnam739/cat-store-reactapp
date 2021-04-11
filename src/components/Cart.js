@@ -1,23 +1,19 @@
 import React, { Component, useDebugValue,useState } from 'react';
-import Product from "./Product";
-import Title from "./Title";
-import { storeProducts } from "../data";
+import { storeCats } from "../data";
 import styled from "styled-components";
-import {ProductConsumer} from '../context';
-import CartItem from './CartItem';
+import {CatConsumer} from '../context';
+import CatItem from "./CatItem";
 import { Link } from 'react-router-dom';
 
 function Cart(){
-    
     return (
         <section>
-        <ProductConsumer>
+        <CatConsumer>
           {value => {
             const { cart } = value;
             if (cart.length > 0) {
               return (
                 <React.Fragment>
-                  <Title name="your" title="cart" />
                   {/*Cart Column*/}
                   <div className="container-fluid text-center d-none d-lg-block">
                         <div className="row ">
@@ -36,7 +32,7 @@ function Cart(){
                   
                   <div className="container-fluid">
                         {cart.map(item => (
-                        <CartItem key={item.id} item={item} value={value} />
+                        <CatItem key={item.id} item={item} value={value} />
                         ))}
                   </div>
                  
@@ -46,7 +42,7 @@ function Cart(){
               return(<h1 className="container-fluid text-center">Danh sách mèo ưa thích trống</h1>)
             }
           }}
-        </ProductConsumer>
+        </CatConsumer>
       </section>
     );
 }
