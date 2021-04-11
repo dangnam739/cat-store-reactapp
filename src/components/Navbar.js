@@ -4,32 +4,30 @@ import logo from '../logo.svg'
 import { Nav } from 'react-bootstrap';
 import {ButtonContainer} from '../components/Button';
 import styled from "styled-components";
-class Navbar extends Component {
-    render() {
-        return (
-            <NavWrapper className="navbar navbar-expand-sm  navbar-dark px-sm-5">
+function Navbar(){
+  return (
+    <NavWrapper className="navbar navbar-expand-sm  navbar-dark px-sm-5" style={{background:"#009ffd"}}>
 
-            <Link to="/contact">
-              <img src={logo} alt="store" className="navbar-brand" />
-            </Link>
-            <ul className="navbar-nav align-items-center">
-              <li className="nav-item ml-5">
-                <Link to="/" className="nav-link">
-                Home
-                </Link>
-              </li>
-            </ul>
-            <Link to='/cart' className='ml-auto'>
-                <ButtonContainer>
-                  <span className="mr-2 pr-2">
-                   <i className="fas fa-cart-plus border-right-2" />
-                  </span>
-                Your favorite Cat List
-                </ButtonContainer>
-            </Link>
-          </NavWrapper>
-        );
-    }
+    <Link to="/contact">
+      <img src={logo} alt="store" className="navbar-brand" />
+    </Link>
+    <ul className="navbar-nav align-items-center">
+      <li className="nav-item ml-5">
+        <Link to="/" className="nav-link">
+        Home
+        </Link>
+      </li>
+    </ul>
+    <Link to='/cart' className='ml-auto'>
+        <ButtonContainer>
+          <span className="mr-2">
+           <i className="fas fa-cart-plus" />
+          </span>
+        Your favorite Cat List
+        </ButtonContainer>
+    </Link>
+  </NavWrapper>
+);
 }
 const NavWrapper = styled.nav`
   background: var(--mainBlue);

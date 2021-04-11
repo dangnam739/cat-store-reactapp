@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from './components/Navbar'
-import Detail from './components/Detail'
+import Details from './components/Details'
 import Contact from './components/Contact'
 import Modal from './components/Modal'
 import Default from './components/Default'
@@ -16,7 +16,7 @@ function App() {
       <Navbar/>
       <Switch>
         <Route exact path="/" component={CatList}/>
-        <Route path="/detail" component={Detail} />
+        <Route path="/details" component={Details} />
         <Route path="/cart" component={Cart}/>
         <Route path="/contact" component={Contact} />
         <Route component={Default} />

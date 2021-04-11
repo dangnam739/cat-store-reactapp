@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { CatConsumer } from "../context";
 import PropTypes from 'prop-types';
 
-export default function CatItem({ product }) {
-    const { id, title, img, price, inCart } = product;
+export default function CatItem({ cat }) {
+  
+    const { id, type, img, price, inCart } = cat;
     return (
         <CatWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
             <div className="card">
@@ -15,22 +16,23 @@ export default function CatItem({ product }) {
                             <div className="img-container my-5"
                                 onClick={() => {
                                     value.handleDetail(id);
-                                    value.openModal(id);
+                                   
                                 }}
                             >
-                                <Link to='/'>
+                                <Link to='/details'>
                                     <img src={img} alt='detail product' className="card-img-top" />
                                 </Link>
                                 <button
-                                    className="cart-btn"
+                                    className="cart-btn" style={{background:"#009ffd"}}
                                     disabled={inCart ? true : false}
                                     onClick={() => {
                                         value.addToCart(id);
                                         value.openModal(id);
                                     }}
                                 >
-                                    {inCart ? (<p className="text-capitalize mb-0 " disabled>in inCart</p>) : (<i className="fas fa-cart-plus" />)}
+                                    {inCart ? (<p className="text-capitalize mb-0 " disabled>in Your Favorite</p>) : (<i className="fas fa-cart-plus" />)}
                                 </button>
+                                <span className="text-center card-footer text-uppercase"><strong>{type}</strong></span>
                             </div>
                         );
                     }}

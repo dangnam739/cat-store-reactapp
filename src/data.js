@@ -20,7 +20,7 @@ export const storeCats = [
     origin: "America",
     info:
       "Những người yêu thích Bobtail ở Mỹ nói rằng thay vào đó bạn nên xem xét con mèo của chúng. chúng là một người yêu với trái tim vàng, người hết lòng vì người dân của mình, đi theo chúng, thích chơi đùa, đi bộ đẹp trên dây xích (tất nhiên là sau khi đào tạo) và luôn tươi cười chào đón khách..",
-    inCart: true,
+    inCart: false,
     count: 0,
     total: 0
   },

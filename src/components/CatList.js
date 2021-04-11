@@ -14,8 +14,8 @@ function CatList(){
                 <div className='row'>
                     <CatConsumer>
                     {value =>{
-                        return value.cats.map(product=>{
-                        return <CatItem key={product.id} product={product}/>
+                        return value.cats.map(cat=>{
+                        return <CatItem key={cat.id} cat={cat}/>
                         })
                     }}
                     </CatConsumer>

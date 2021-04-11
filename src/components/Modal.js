@@ -1,60 +1,58 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { CatConsumer, ProductConsumer } from "../context";
+import { CatConsumer} from "../context";
 import { ButtonContainer } from "./Button";
 import { Link } from "react-router-dom";
 
-export default class Modal extends Component {
-    render() {
-        return (
-            <CatConsumer>
-                {value => {
-                    const { modalOpen, closeModal } = value;
-                    const { img, title, price } = value.modalCat;
-                    if (!modalOpen) {
-                        return null;
-                    } else {
-                        return (
-                            <ModalContainer>
-                                <div className="container">
-                                    <div className="row">
-                                        <div
-                                            className="col-8 mx-auto col-md-6 col-lg-4 p-5 text-center text-capitalize"
-                                            id="modal"
-                                        >
-                                            <h5>About</h5>
-                                            <img src={img} className="img-fluid" alt="" />
-                                            <h5>{title}</h5>
-                                            <h5 className="text-muted">price : ${price}</h5>
-                                            <Link to="/details">
-                                                <ButtonContainer
-                                                    onClick={() => {
-                                                        closeModal();
-                                                    }}
-                                                >
-                                                    View Detail
-                                        </ButtonContainer>
-                                            </Link>
-                                            <Link to="/">
-                                                <ButtonContainer
-                                                    onClick={() => {
-                                                        closeModal();
-                                                    }}
-                                                >
-                                                    Close
-                                        </ButtonContainer>
-                                            </Link>
-                                        </div>
+export default function Modal(){
+    return (
+        <CatConsumer>
+            {value => {
+                const { modalOpen, closeModal } = value;
+                const { img, type, price } = value.modalCat;
+                if (!modalOpen) {
+                    return null;
+                } else {
+                    return (
+                        <ModalContainer>
+                            <div className="container">
+                                <div className="row">
+                                    <div
+                                        className="col-8 mx-auto col-md-6 col-lg-4 p-5 text-center text-capitalize"
+                                        id="modal" style={{background:"#f3f3f3",borderRadius:"10px"}}
+                                    >
+                                        <h5>About</h5>
+                                        <img src={img} className="img-fluid" alt="" />
+                                        <h5>{type}</h5>
+                                        <h5 className="text-muted">price : ${price}</h5>
+                                        <Link to="/">
+                                            <ButtonContainer
+                                                onClick={() => {
+                                                    closeModal();
+                                                }}
+                                            >
+                                                continue to choose
+                                    </ButtonContainer>
+                                        </Link>
+                                        <Link to="/cart">
+                                            <ButtonContainer
+                                                onClick={() => {
+                                                    closeModal();
+                                                }}
+                                            >
+                                                Go To Your Favorite
+                                    </ButtonContainer>
+                                        </Link>
                                     </div>
                                 </div>
-                            </ModalContainer>
-                        );
-                    }
+                            </div>
+                        </ModalContainer>
+                    );
                 }
-                }
-            </CatConsumer>
-        )
-    }
+            }
+            }
+        </CatConsumer>
+    )
 }
 
 const ModalContainer = styled.div`

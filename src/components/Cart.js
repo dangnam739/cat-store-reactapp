@@ -2,7 +2,7 @@ import React, { Component, useDebugValue,useState } from 'react';
 import { storeCats } from "../data";
 import styled from "styled-components";
 import {CatConsumer} from '../context';
-import CatItem from "./CatItem";
+import CartItem from "./CartItem";
 import { Link } from 'react-router-dom';
 
 function Cart(){
@@ -32,7 +32,7 @@ function Cart(){
                   
                   <div className="container-fluid">
                         {cart.map(item => (
-                        <CatItem key={item.id} item={item} value={value} />
+                        <CartItem key={item.id} item={item} value={value} />
                         ))}
                   </div>
                  
