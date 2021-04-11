@@ -70,6 +70,6 @@ function ProductProvider({children}) {
   );
 }
 
-const ProductConsumer = ProductContext.Consumer;
+const CatConsumer = ProductContext.Consumer;
 
-export { ProductProvider, ProductConsumer};
+export { ProductProvider, CatConsumer};
