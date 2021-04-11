@@ -1,64 +1,64 @@
 import React, { Component,useEffect,useState } from "react";
-import { storeProducts, detailProduct_Item } from "./data";
-const ProductContext = React.createContext();
+import { storeCats, detailCat_Item } from "./data";
+const CatContext = React.createContext();
 
-function ProductProvider({children}) {
+function CatProvider({children}) {
 
-  const [products,setProducts] = useState([]);
-  const [detailProduct,setDetailProduct] = useState(detailProduct_Item);
+  const [cats,setCats] = useState([]);
+  const [detailCat,setDetailCat] = useState(detailCat_Item);
   const [cart,setCart] = useState([]);
   const [modalOpen,setModalOpen] = useState(false);
-  const [modalProduct,setModalProduct] = useState(detailProduct_Item); 
+  const [modalCat,setModalCat] = useState(detailCat_Item);
 
   useEffect(()=>{
-    setProductList();
+    setCatList();
   },[])
-  const setProductList = ()=>{
-    let list_product = [];
-    storeProducts.forEach(item=>{
-      const singleProduct = {...item}
-      list_product =[...list_product,singleProduct];
+  const setCatList = ()=>{
+    let list_cat = [];
+    storeCats.forEach(item=>{
+      const singleCat = {...item}
+      list_cat =[...list_cat,singleCat];
     });
-    setProducts(list_product);
+    setCats(list_cat);
   }
   function getItem(id){
-      const product_item = products.find(item=>item.id===id);
-      return product_item;
+      const cat_item = cats.find(item=>item.id===id);
+      return cat_item;
   }
   function handleDetail(id){
-    const product_item = getItem(id);
-    setDetailProduct(product_item);
+    const cat_item = getItem(id);
+    setDetailCat(cat_item);
 
   }
   function addToCart(id){
-    const tempProducts = [...products];
-    const index = tempProducts.indexOf(getItem(id));
-    const product_item = tempProducts[index];
-    product_item.count = 1;
-    product_item.inCart = true;
-    const price = product_item.price;
-    product_item.total = price;
-    setProducts([...tempProducts]);
-    setCart([...cart,product_item]);
-    setDetailProduct({product_item});
+    const tempCats = [...cats];
+    const index = tempCats.indexOf(getItem(id));
+    const cat_item = tempCats[index];
+    cat_item.count = 1;
+    cat_item.inCart = true;
+    const price = cat_item.price;
+    cat_item.total = price;
+    setCats([...tempCats]);
+    setCart([...cart,cat_item]);
+    setDetailCat({cat_item});
   }
   function openModal(id){
-    const product_item = getItem(id);
-    setModalProduct(product_item);
+    const cat_item = getItem(id);
+    setModalCat(cat_item);
     setModalOpen(true);
   }
   const closeModal = () =>{
     setModalOpen(false);
   }
-  
+
   return (
-    <ProductContext.Provider
+    <CatContext.Provider
       value={{
-        products:products,
-        detailProduct:detailProduct,
+        cats:cats,
+        detailCat:detailCat,
         cart:cart,
         modalOpen:modalOpen,
-        modalProduct:modalProduct,
+        modalCat:modalCat,
         handleDetail:handleDetail,
         addToCart:addToCart,
         openModal:openModal,
@@ -66,10 +66,10 @@ function ProductProvider({children}) {
       }}
     >
       {children}
-    </ProductContext.Provider>
+    </CatContext.Provider>
   );
 }
 
-const ProductConsumer = ProductContext.Consumer;
+const CatConsumer = CatContext.Consumer;
 
-export { ProductProvider, ProductConsumer};
+export { CatProvider, CatConsumer};

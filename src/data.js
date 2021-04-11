@@ -1,5 +1,5 @@
 
-export const storeProducts = [
+export const storeCats = [
   {
     id: 1,
     type: "Mèo Aegean Hi Lạp",
@@ -98,7 +98,7 @@ export const storeProducts = [
   }
 ];
 
-export const detailProduct_Item = {
+export const detailCat_Item = {
   id: 1,
   type: "Mèo Aegean Hi Lạp",
   img: "img/cat-1.png",

@@ -5,14 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
-import { ProductProvider } from './context';
+import { CatProvider } from './context';
 ReactDOM.render(
   <React.StrictMode>
-    <ProductProvider>
+    <CatProvider>
       <Router>
         <App />
       </Router>
-    </ProductProvider>
+    </CatProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

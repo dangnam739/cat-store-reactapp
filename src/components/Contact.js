@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ProductConsumer } from "../context";
+import { CatConsumer } from "../context";
 //import { ButtonContainer } from "./Button";
 import { Link } from "react-router-dom";
 import {InfoOfShop} from '../data';
@@ -11,7 +11,7 @@ export default class Contact extends Component {
 
       <div className="row">
         <div className="col-10 mx-auto text-center text-slanted text-blue my-5">
-          <h1>Thông tin liên hệ tới Cửa hàng</h1>
+          <h1>Thông tin liên hệ</h1>
         </div>
       </div>
 
