@@ -3,7 +3,8 @@ import { CatConsumer } from "../context";
 import { ButtonContainer } from "./Button";
 import { Link } from "react-router-dom";
 
-function Detail(){
+export default class Details extends Component {
+  render() {
     return (
       <CatConsumer>
         {value => {
@@ -69,4 +70,5 @@ function Detail(){
         }}
       </CatConsumer>
     );
+  }
 }

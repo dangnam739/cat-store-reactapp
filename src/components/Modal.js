@@ -4,13 +4,13 @@ import { CatConsumer, ProductConsumer } from "../context";
 import { ButtonContainer } from "./Button";
 import { Link } from "react-router-dom";
 
-function Modal(props) {
-    return (
-        <CatConsumer>
-            {value => {
-                value => {
+export default class Modal extends Component {
+    render() {
+        return (
+            <CatConsumer>
+                {value => {
                     const { modalOpen, closeModal } = value;
-                    const { img, title, price } = value.modalProduct;
+                    const { img, title, price } = value.modalCat;
                     if (!modalOpen) {
                         return null;
                     } else {
@@ -32,8 +32,8 @@ function Modal(props) {
                                                         closeModal();
                                                     }}
                                                 >
-                                                View Detail
-                                                </ButtonContainer>
+                                                    View Detail
+                                        </ButtonContainer>
                                             </Link>
                                             <Link to="/">
                                                 <ButtonContainer
@@ -41,8 +41,8 @@ function Modal(props) {
                                                         closeModal();
                                                     }}
                                                 >
-                                                Close
-                                                </ButtonContainer>
+                                                    Close
+                                        </ButtonContainer>
                                             </Link>
                                         </div>
                                     </div>
@@ -51,10 +51,10 @@ function Modal(props) {
                         );
                     }
                 }
-            }}
-        </CatConsumer>
-    )
-
+                }
+            </CatConsumer>
+        )
+    }
 }
 
 const ModalContainer = styled.div`
