@@ -25,24 +25,25 @@ export default function Modal(){
                                         <img src={img} className="img-fluid" alt="" />
                                         <h5>{type}</h5>
                                         <h5 className="text-muted">price : ${price}</h5>
+                                        <Link to="/details">
+                                            <ButtonContainer
+                                                onClick={() => {
+                                                    closeModal();
+                                                }}
+                                            >
+                                            View Details
+                                            </ButtonContainer>
+                                        </Link>
                                         <Link to="/">
                                             <ButtonContainer
                                                 onClick={() => {
                                                     closeModal();
                                                 }}
                                             >
-                                                continue to choose
-                                    </ButtonContainer>
+                                            Close
+                                        </ButtonContainer>
                                         </Link>
-                                        <Link to="/cart">
-                                            <ButtonContainer
-                                                onClick={() => {
-                                                    closeModal();
-                                                }}
-                                            >
-                                                Go To Your Favorite
-                                    </ButtonContainer>
-                                        </Link>
+
                                     </div>
                                 </div>
                             </div>

@@ -30,7 +30,7 @@ export default function Contact(){
                   </strong>
                 </h4>
                 <p className="text-capitalize font-weight-bold mt-3 mb-0">
-                  Điện Thoại:
+                  Điện thoại:
                 </p>
                 <p className="text-muted lead">{phone}</p>
                 <hr/>

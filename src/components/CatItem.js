@@ -5,7 +5,7 @@ import { CatConsumer } from "../context";
 import PropTypes from 'prop-types';
 
 export default function CatItem({ cat }) {
-  
+
     const { id, type, img, price, inCart } = cat;
     return (
         <CatWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
@@ -15,11 +15,11 @@ export default function CatItem({ cat }) {
                         return (
                             <div className="img-container my-5"
                                 onClick={() => {
-                                    value.handleDetail(id);
-                                   
+                                  value.handleDetail(id);
+                                  value.openModal(id);
                                 }}
                             >
-                                <Link to='/details'>
+                                <Link to='/'>
                                     <img src={img} alt='detail product' className="card-img-top" />
                                 </Link>
                                 <button
